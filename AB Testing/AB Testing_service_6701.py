@@ -1,6 +1,5 @@
 #TODO
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy import stats
 
 class ABTesting:
@@ -24,7 +23,7 @@ class ABTesting:
         return z_score
 
     def calculate_p_value(self, z_score):
-        p_value = stats.norm.sf(abs(z_score))
+        p_value = stats.norm.sf(abs(z_score)) * 2  # Two-tailed test
         return p_value
 
     def run_test(self, alpha=0.05):
@@ -35,8 +34,8 @@ class ABTesting:
         else:
             print("Fail to reject null hypothesis. The treatment has no significant effect.")
 
+# Example usage
 control_group = [0, 1, 1, 0, 1, 0, 1, 1, 0, 1]
 treatment_group = [1, 0, 1, 1, 0, 1, 1, 0, 1, 1]
-
 ab_testing = ABTesting(control_group, treatment_group)
 ab_testing.run_test()

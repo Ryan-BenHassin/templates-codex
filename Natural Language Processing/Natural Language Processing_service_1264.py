@@ -23,7 +23,7 @@ def process_text(text):
  tokens = [t for t in tokens if t not in stop_words]
  lemmatizer = WordNetLemmatizer()
  tokens = [lemmatizer.lemmatize(t) for t in tokens]
- return '.join(tokens)
+ return ''.join(tokens)
 
 def train(text_data, labels):
  vectorizer = CountVectorizer()

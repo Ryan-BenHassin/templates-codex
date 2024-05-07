@@ -1,8 +1,7 @@
-#TODO
 import pandas as pd
 
 def filter_data(df, column, value):
- return df[df[column] == value]
+    return df[df[column] == value]
 
 # Example usage:
 df = pd.read_csv('data.csv')

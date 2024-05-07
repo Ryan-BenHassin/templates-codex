@@ -12,18 +12,18 @@ auth_token = "your_auth_token"
 client = Client(account_sid, auth_token)
 
 class Notification(Resource):
- def post(self):
- data = request.get_json()
- to_number = data['to_number']
- message = data['message']
- message = client.messages.create(
- from_='your_twilio_number',
- to=to_number,
- body=message
- )
- return jsonify({'message': 'Notification sent successfully'})
+    def post(self):
+        data = request.get_json()
+        to_number = data['to_number']
+        message = data['message']
+        message = client.messages.create(
+            from_='your_twilio_number',
+            to=to_number,
+            body=message
+        )
+        return jsonify({'message': 'Notification sent successfully'})
 
 api.add_resource(Notification, '/notification')
 
 if __name__ == '__main__':
- app.run(debug=True)
+    app.run(debug=True)

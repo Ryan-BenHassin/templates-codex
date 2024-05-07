@@ -13,12 +13,12 @@ logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(level
 
 @app.before_request
 def check_api_key():
- if request.headers.get('API-Key') != API_KEY:
- return jsonify({'error': 'Invalid API Key'}), 401
+   if request.headers.get('API-Key') != API_KEY:
+       return jsonify({'error': 'Invalid API Key'}), 401
 
 @app.route('/', methods=['GET'])
 def index():
- return jsonify({'message': 'Welcome to API Gateway'})
+   return jsonify({'message': 'Welcome to API Gateway'})
 
 if __name__ == '__main__':
- app.run(debug=True)
+   app.run(debug=True)

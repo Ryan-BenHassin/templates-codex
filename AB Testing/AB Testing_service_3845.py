@@ -2,21 +2,21 @@
 import random
 
 class AbTesting:
- def __init__(self, experiment_name, variations):
- self.experiment_name = experiment_name
- self.variations = variations
- self.users = {}
+    def __init__(self, experiment_name, variations):
+        self.experiment_name = experiment_name
+        self.variations = variations
+        self.users = {}
 
- def add_user(self, user_id):
- if user_id not in self.users:
- variation = random.choice(self.variations)
- self.users[user_id] = variation
+    def add_user(self, user_id):
+        if user_id not in self.users:
+            variation = random.choice(self.variations)
+            self.users[user_id] = variation
 
- def get_variation(self, user_id):
- return self.users.get(user_id)
+    def get_variation(self, user_id):
+        return self.users.get(user_id)
 
- def track metric(self, user_id, metric_name, metric_value):
- print(f"Tracking metric {metric_name}={metric_value} for user {user_id} in experiment {self.experiment_name}")
+    def track_metric(self, user_id, metric_name, metric_value):
+        print(f"Tracking metric {metric_name}={metric_value} for user {user_id} in experiment {self.experiment_name}")
 
 # Example usage
 ab_testing = AbTesting("My Experiment", ["A", "B"])
