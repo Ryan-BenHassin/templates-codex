@@ -1,4 +1,4 @@
-```
+#TODO
 from PIL import Image, ImageFilter, ImageEnhance
 import cv2
 import numpy as np
@@ -57,4 +57,3 @@ class ImageProcessor:
 processor = ImageProcessor('input.jpg')
 filtered_image = processor.apply_filter('blur')
 processor.save_image(filtered_image, 'output.jpg')
-```
