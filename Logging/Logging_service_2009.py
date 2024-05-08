@@ -9,6 +9,7 @@ logger.setLevel(logging.DEBUG)
 fh = RotatingFileHandler('my_app.log', maxBytes=1000000, backupCount=3)
 fh.setLevel(logging.DEBUG)
 
+
 # Create console handler and set level to info
 ch = logging.StreamHandler()
 ch.setLevel(logging.INFO)
