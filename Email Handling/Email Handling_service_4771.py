@@ -1,3 +1,4 @@
+from email.mime.application import MIMEApplication
 import smtplib
 from email.message import EmailMessage
 from email.mime.multipart import MIMEMultipart
@@ -45,5 +46,5 @@ class EmailHandler:
             server.quit()
 
 # Usage:
-email_handler = EmailHandler('your_email@gmail.com', 'your_password', 'smtp.gmail.com', 587)
-email_handler.send_email('Test Email', 'This is a test email', 'recipient@example.com', ['file1.txt', 'file2.txt'])
+email_handler = EmailHandler('example@gmail.com', 'cxja fyfa yccm rumt', 'smtp.gmail.com', 587)
+email_handler.send_email('Test Email', 'This is a test email', 'reciption@gmail.com', ['file1.txt'])
