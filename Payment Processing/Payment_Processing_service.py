@@ -1,8 +1,7 @@
 import stripe
 
 # Configure your Stripe secret key (ideally should be loaded from a secure environment variable or configuration file)
-stripe.api_key = "sk_test_51GWIK4AUEoYEaNjNLciMckn2RJiIk1phq6th4qqT7iwc7j4Hnp07sD22yOJAqbPGgWVhKG0ctOcqJ6mUghBb4OBK00o9067Mmo"
-
+stripe.api_key = "SECRET API KEY"
 def process_payment(amount, currency, token):
     try:
         charge = stripe.Charge.create(
